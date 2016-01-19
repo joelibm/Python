@@ -15,11 +15,15 @@ if stepOne.isdigit():
             last_stepThree = int(str_stepThree[2])
             stepFour = int(str(last_stepThree) + str(second_stepThree) + str(first_stepThree))
             stepFive = stepThree + stepFour
-            print(stepOne, stepTwo, stepThree, stepFour)
-            print(stepFive)
+            print(stepOne)
+            print(stepTwo)
+            print(stepOne,"-",stepTwo,"=",stepThree)
+            print(stepFour)
+            print(stepThree,"+",stepFour,"=",stepFive)
         else:
             print("Invalid input. First and third digits must differ by at least 2!")
     else:
         print("Invalid Input. Number must be 3 digits long!")
 else:
     print("Invalid Input. Number must be a number")
+
