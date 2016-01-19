@@ -7,9 +7,9 @@ if stepOne.isdigit():
     if len(stepOne) == 3:
         if abs(first_stepOne - last_stepOne) > 1:
             stepTwo = int(str(last_stepOne) + str(second_stepOne) + str(first_stepOne))
-            print(stepTwo)
-            #stepThree = abs(stepOne - stepTwo)
-            #print(stepThree)
+            stepOne = int(stepOne)
+            stepThree = abs(stepOne - stepTwo)
+            print(stepThree)
         else:
             print("Invalid input. First and third digits must differ by at least 2!")
     else:
