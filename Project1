@@ -1,0 +1,18 @@
+print ("Welcome to Joel's 1089!")
+stepOne= input("Please enter a 3 digit number where the 1st digit and the 3rd digit differ by at least 2: ")
+first_stepOne = int(stepOne[0])
+second_stepOne = int(stepOne[1])
+last_stepOne = int(stepOne[2])
+if stepOne.isdigit():
+    if len(stepOne) == 3:
+        if abs(first_stepOne - last_stepOne) > 1:
+            stepTwo = int(str(last_stepOne) + str(second_stepOne) + str(first_stepOne))
+            print(stepTwo)
+            #stepThree = abs(stepOne - stepTwo)
+            #print(stepThree)
+        else:
+            print("Invalid input. First and third digits must differ by at least 2!")
+    else:
+        print("Invalid Input. Number must be 3 digits long!")
+else:
+    print("Invalid Input. Number must be a number")
