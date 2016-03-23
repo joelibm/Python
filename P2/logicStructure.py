@@ -53,13 +53,13 @@ def suit_of_card(suit):
     elif suit == 4:
         return '\u2661'
 
-def report_player(player, playerTotal, playerHand):
+def report(player, playerTotal, playerHand):
     print (player,"'s Hand:",playerHand,sep='')
     print ("Value:",playerTotal)
     
-def report_dealer(dealerTotal,dealerHand):
-    print ("Dealer's Hand:",dealerHand,sep='')
-    print ("Value:",dealerTotal)
+##def report_dealer(dealerTotal,dealerHand):
+##    print ("Dealer's Hand:",dealerHand,sep='')
+##    print ("Value:",dealerTotal)
 
 def snake_eyes(personTotal):
     if personTotal == 22:
@@ -89,10 +89,19 @@ def split_test(player,bet):
     firstCard = playerTotal#primes option for splitting
     playerHand,playerAce,playerTotal = playerHand*2,playerAce*2,playerTotal *2
 
-    playerTotal = snake_eyes(playerTotal)#fixes issue when double aces are drawn
+    #fixes issue when double aces are drawn
     dealerTotal = snake_eyes(dealerTotal)
 
-    report_player(player, playerTotal, playerHand)
-    report_dealer(dealerTotal,dealerHand)
+    report(player, playerTotal, playerHand)
+    report("Dealer",dealerTotal,dealerHand)
+
+    if firstCard == playerTotal / 2:
+        split = input("Would you like to split? (y/n)")
+        if split == "" or split.lower()[0] == "y":
+            print("split")
+            
+        elif playerTotal == 22:
+            playerTotal = snake_eyes(playerTotal)
+            
 
 split_test("Joel",50)
